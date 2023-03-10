@@ -3,7 +3,14 @@
   <header class="page-header">
     <h1>Order #<%= @order.id %></h1>
   </header>
+<h1> <%=@order.email%> </h1>
+<% @order.line_items.each do |item|%>
+  
+  <img src="<%= item.product.image.tiny%>" />
+  <p> <%= item.product.name%></p>
+  <p> <%= item.product.description%></p>
 
+<%end%>
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
   </div>
